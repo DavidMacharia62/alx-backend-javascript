@@ -128,4 +128,4 @@ const customIterable = {
 };
 ```
 
-This readme provides an overview of key features introduced in ES6, including variables, functions, strings, objects, and iteration. For more in-depth understanding, consider referring to the ECMAScript 2015 specification and additional resources.
+This readme file provides an overview of key features introduced in ES6, including variables, functions, strings, objects, and iteration. For more in-depth understanding, consider referring to the ECMAScript 2015 specification and additional resources.
