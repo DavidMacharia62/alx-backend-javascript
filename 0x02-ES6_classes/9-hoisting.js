@@ -1,6 +1,7 @@
-// 9-hoisting.js
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable max-classes-per-file */
 
-export class HolbertonClass {
+class HolbertonClass {
   constructor(year, location) {
     this._year = year;
     this._location = location;
@@ -15,11 +16,16 @@ export class HolbertonClass {
   }
 }
 
-export class StudentHolberton {
-  constructor(firstName, lastName, holbertonClass) {
+const class2019 = new HolbertonClass(2019, 'San Francisco');
+const class2020 = new HolbertonClass(2020, 'San Francisco');
+
+export default HolbertonClass;
+
+class StudentHolberton extends HolbertonClass {
+  constructor(firstName, lastName) {
+    super(HolbertonClass);
     this._firstName = firstName;
     this._lastName = lastName;
-    this._holbertonClass = holbertonClass;
   }
 
   get fullName() {
@@ -27,7 +33,7 @@ export class StudentHolberton {
   }
 
   get holbertonClass() {
-    return this._holbertonClass;
+    return this.holbertonClass;
   }
 
   get fullStudentDescription() {
@@ -35,16 +41,10 @@ export class StudentHolberton {
   }
 }
 
-// Instances
-export const class2019 = new HolbertonClass(2019, 'San Francisco');
-export const class2020 = new HolbertonClass(2020, 'San Francisco');
+const student1 = new StudentHolberton('Guillaume', 'Salva', class2020);
+const student2 = new StudentHolberton('John', 'Doe', class2020);
+const student3 = new StudentHolberton('Albert', 'Clinton', class2019);
+const student4 = new StudentHolberton('Donald', 'Bush', class2019);
+const student5 = new StudentHolberton('Jason', 'Sandler', class2019);
 
-export const student1 = new StudentHolberton('Guillaume', 'Salva', class2020);
-export const student2 = new StudentHolberton('John', 'Doe', class2020);
-export const student3 = new StudentHolberton('Albert', 'Clinton', class2019);
-export const student4 = new StudentHolberton('Donald', 'Bush', class2019);
-export const student5 = new StudentHolberton('Jason', 'Sandler', class2019);
-
-// Exporting the instances
 export const listOfStudents = [student1, student2, student3, student4, student5];
-
